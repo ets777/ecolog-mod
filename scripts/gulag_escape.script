@@ -17,6 +17,30 @@ function a_predicate_a3(obj_info)
 end
 
 function load_job(sj, gname, type, squad, groups)
+
+	--- наш лагерь ---
+	if type == "my_esc_lager" then
+		t = { section = "logic@my_esc_lager_escape_stalk",
+			idle = 0,
+			prior = 9, state = {0, 1},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		
+		t = { section = "logic@my_esc_lager_zoneguard",
+			idle = 0,
+			prior = 9, state = {0, 1},
+			in_rest = "", out_rest = "",
+		}
+		table.insert(sj, t)
+		
+		t = { section = "logic@my_esc_lager_walker",
+			idle = 0,
+			prior = 8, state = {0, 1},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+	end
 --'--------------------------------------------------------------------------
 --' ESCAPE
 --'--------------------------------------------------------------------------
@@ -2039,6 +2063,16 @@ end
 
 function load_states(gname, type)
 
+	if type == "my_esc_lager" then
+		return function(gulag)
+			if level.get_time_hours() >= 7 and level.get_time_hours() <= 22 then
+				return 0  
+			else
+				return 1
+			end
+		end
+	end
+
 	if type == "esc_blokpost" then
 		return function (gulag)
 			local actor = db.actor
@@ -2314,6 +2348,11 @@ end
 
 function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
 
+	--- наш лагерь ---
+	if gulag_type == "my_esc_lager" then
+		return npc_community == "stalker"
+	end	
+
 	if gulag_type == "esc_bridge" then
 		return npc_community == "military"
 	end
@@ -2353,7 +2392,6 @@ function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
 	if gulag_type == "esc_stalker_camp" then
 		return npc_community == "stalker"
 	end
-	
 	
 	return false
 end
