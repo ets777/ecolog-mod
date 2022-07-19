@@ -27,7 +27,7 @@ function load_job(sj, gname, type, squad, groups)
 		}
 		table.insert(sj, t)
 		
-		t = { section = "logic@my_esc_lager_zoneguard",
+		t = { section = "logic@my_esc_lager_escape_stalk",
 			idle = 0,
 			prior = 9, state = {0, 1},
 			in_rest = "", out_rest = "",
@@ -2350,7 +2350,7 @@ function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
 
 	--- наш лагерь ---
 	if gulag_type == "my_esc_lager" then
-		return npc_community == "stalker"
+		return npc_community == "ecolog"
 	end	
 
 	if gulag_type == "esc_bridge" then
