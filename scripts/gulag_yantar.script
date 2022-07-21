@@ -375,6 +375,30 @@ function load_job(sj, gname, type, squad, groups)
 		table.insert(sj, t)
 	end
 
+	--- лагерь учёных за бункером ---
+	if type == "ecologist_camp" then
+		t = { section = "logic@ecologist_camp_crush",
+			idle = 0,
+			prior = 9, state = {0, 1},
+			in_rest = "", out_rest = ""
+		}
+		table.insert(sj, t)
+		
+		t = { section = "logic@ecologist_camp_crush",
+			idle = 0,
+			prior = 9, state = {0, 1},
+			in_rest = "", out_rest = "",
+		}
+		table.insert(sj, t)
+
+		t = { section = "logic@ecologist_camp_crush",
+			idle = 0,
+			prior = 9, state = {0, 1},
+			in_rest = "", out_rest = "",
+		}
+		table.insert(sj, t)
+		
+	end
 
 end
 
@@ -411,6 +435,17 @@ function load_states(gname, type)
 		end
 	end
 
+	--- лагерь учёных за бункером ---
+	if type == "ecologist_camp" then
+		return function(gulag)
+			if level.get_time_hours() >= 7 and level.get_time_hours() <= 22 then
+				return 0  
+			else
+				return 1
+			end
+		end
+	end
+
 end
 
 
@@ -429,6 +464,11 @@ function checkStalker(npc_community, gulag_type)
 	if gulag_type == "yan_scientist" then
 		return npc_community == "ecolog"
 	end
+
+	--- лагерь учёных за бункером ---
+	if gulag_type == "ecologist_camp" then
+		return npc_community == "ecolog"
+	end	
 
 	return false
 end
