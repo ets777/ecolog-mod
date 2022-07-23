@@ -9824,14 +9824,13 @@ character_profile = bar_ecolog_guard
 game_vertex_id = 1350
 distance = 2.8
 level_vertex_id = 100
-object_flags = 0xfffffff7
+object_flags = 0xffffffbf
 custom_data = <<END
-[spawner]
-cond = {+bar_heli_scene_stay_online}
-
 [smart_terrains]
 bar_ecolog_crush = {+bar_heli_scene_stay_online}
+ecologist_camp = {+bar_rescue_research_chasing_end}
 END
+story_id = 100001
 
 ; cse_visual properties
 visual_name = actors\ecolog\stalker_ecolog
@@ -9883,17 +9882,16 @@ character_profile = bar_ecolog_guard
 game_vertex_id = 1350
 distance = 2.0999999
 level_vertex_id = 75
-object_flags = 0xfffffff7
+object_flags = 0xffffffbf
 custom_data = <<END
-[spawner]
-cond = {+bar_heli_scene_stay_online}
-
 [smart_terrains]
 bar_ecolog_crush = {+bar_heli_scene_stay_online}
+ecologist_camp = {-bar_heli_scene_stay_online}
 END
 
 ; cse_visual properties
 visual_name = actors\ecolog\stalker_ecolog
+story_id = 100002
 
 ; cse_alife_creature_abstract properties
 g_team = 0
@@ -9942,17 +9940,16 @@ character_profile = bar_ecolog_guard
 game_vertex_id = 1350
 distance = 2.0999999
 level_vertex_id = 99
-object_flags = 0xfffffff7
+object_flags = 0xffffffbf
 custom_data = <<END
-[spawner]
-cond = {+bar_heli_scene_stay_online}
-
 [smart_terrains]
 bar_ecolog_crush = {+bar_heli_scene_stay_online}
+ecologist_camp = {-bar_heli_scene_stay_online}
 END
 
 ; cse_visual properties
 visual_name = actors\ecolog\stalker_ecolog
+story_id = 100003
 
 ; cse_alife_creature_abstract properties
 g_team = 0
@@ -10001,17 +9998,16 @@ character_profile = bar_ecolog_guard
 game_vertex_id = 1350
 distance = 1.4
 level_vertex_id = 74
-object_flags = 0xfffffff7
+object_flags = 0xffffffbf
 custom_data = <<END
-[spawner]
-cond = {+bar_heli_scene_stay_online}
-
 [smart_terrains]
 bar_ecolog_crush = {+bar_heli_scene_stay_online}
+ecologist_camp = {-bar_heli_scene_stay_online}
 END
 
 ; cse_visual properties
 visual_name = actors\ecolog\stalker_ecolog
+story_id = 100004
 
 ; cse_alife_creature_abstract properties
 g_team = 0

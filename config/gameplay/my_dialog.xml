@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<game_dialogs>
+    <dialog id="privet">
+        <phrase_list>
+            <phrase id="0">
+                <text>my1</text>
+                <next>1</next>
+            </phrase>
+            <phrase id="1">
+                <text>my2</text>
+                <action>dialogs.ecolog_spots</action>
+                <give_info>privet</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
+</game_dialogs>
